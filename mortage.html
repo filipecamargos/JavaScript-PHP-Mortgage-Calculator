@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h2>Mortgage Calculator</h2>
+        <div id="formBlock">
+            <form action="mortage.php" method="GET" id="myForm">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Annual Percentage Rate %:</td>
+                            <td><input type="number" name="apr" id="apr" value="0.00" min="0.01" max="25" step="0.01" onchange="validateInput1(this)" required /></td>
+                            <tr id="erro1"></tr>
+                        </tr>
+                        <tr>
+                            <td>Loan Term Years: </td>
+                            <td><input type="number" name="years" id="term" value="0" min="1" max="40" step="1" onchange="validateInput2(this)" required /></td>
+                            <tr id="erro2"></tr>
+                        </tr>
+                        <tr>
+                            <td>Loan Amount $: </td>
+                            <td><input type="number" name="ammoun" id="amount" value="0.00" min="0.01" step="0.01" onchange="validateInput3(this)" required /></td>
+                            <tr id="erro3"></tr>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <input type="submit" name="calculate" value="Calculate" class="finalButtons" id="calculate" onclick="getFinalResult(document.getElementById('apr').value, document.getElementById('term').value, 
+            document.getElementById('amount').value)">
+                <input type="reset" name="clear" class="finalButtons" value="Clear" id="clear">
+
+            </form>
+            <script src="code.js"></script>
+        </div>
+    </main>
+</body>
+
+</html>
